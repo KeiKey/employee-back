@@ -17,7 +17,7 @@ public class EmployeeController {
 
     private final EmployeeService employeeService;
 
-    @GetMapping("")
+    @GetMapping("/all")
     public ResponseEntity<List<Employee>> index() {
         return new ResponseEntity<>(employeeService.findAll(), HttpStatus.OK);
     }
@@ -30,7 +30,7 @@ public class EmployeeController {
         return new ResponseEntity<Optional<Employee>>(employee, HttpStatus.OK);
     }
 
-    @PostMapping("create")
+    @PostMapping("/create")
     public ResponseEntity<Employee> create(@RequestBody Employee employee) {
         return new ResponseEntity<>(employeeService.store(employee), HttpStatus.CREATED);
     }
