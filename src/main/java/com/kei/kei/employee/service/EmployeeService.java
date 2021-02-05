@@ -2,7 +2,6 @@ package com.kei.kei.employee.service;
 
 import com.kei.kei.employee.model.Employee;
 import com.kei.kei.employee.repository.EmployeeRepository;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +9,14 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@AllArgsConstructor
 public class EmployeeService {
-    @Autowired
+
     private final EmployeeRepository employeeRepository;
+
+    @Autowired
+    public EmployeeService(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
 
     public Employee store(Employee employee) {
         return employeeRepository.save(employee);

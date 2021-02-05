@@ -11,6 +11,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @ToString
 public class Employee implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
@@ -30,4 +31,5 @@ public class Employee implements Serializable {
         this.phone = phone;
         this.jobTitle = jobTitle;
     }
+
 }
