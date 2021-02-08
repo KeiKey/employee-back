@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * TODO:
+ * Work on functions naming convention for Spring for Controllers and Services
+ */
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/v1/employee")
@@ -30,18 +34,20 @@ public class EmployeeController {
         return new ResponseEntity<Optional<Employee>>(employee, HttpStatus.OK);
     }
 
+    /**
+     * TODO:
+     * Fix why the pfp url doesnt go throw -> Saving+update
+     */
     @PostMapping("/create")
     public ResponseEntity<Employee> create(@RequestBody Employee employee) {
         return new ResponseEntity<>(employeeService.store(employee), HttpStatus.CREATED);
     }
 
-//    @PutMapping("/update/{id}")
     @PutMapping("/update")
     public ResponseEntity<Employee> update(@RequestBody Employee employee) {
         return new ResponseEntity<>(employeeService.update(employee), HttpStatus.OK);
     }
 
-    //    @PutMapping("/{id}")
     @DeleteMapping("/delete/{id}")
     public void delete(
             @PathVariable("id") Long id

@@ -9,6 +9,10 @@ import java.util.Optional;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
+    /**
+     * TODO:
+     * Find why it doesnt work - Try delete by email
+     */
 //    void deleteEmployeeById(Long employeeId);
 
 }
