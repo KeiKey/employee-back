@@ -42,12 +42,11 @@ public class EmployeeController {
     }
 
     //    @PutMapping("/{id}")
-    @PutMapping("/delete/{id}")
-    public ResponseEntity<?> delete(
+    @DeleteMapping("/delete/{id}")
+    public void delete(
             @PathVariable("id") Long id
     ) {
         employeeService.delete(id);
-        return new ResponseEntity(HttpStatus.OK);
     }
 
 }
