@@ -34,10 +34,6 @@ public class EmployeeController {
         return new ResponseEntity<Optional<Employee>>(employee, HttpStatus.OK);
     }
 
-    /**
-     * TODO:
-     * Fix why the pfp url doesnt go throw -> Saving+update
-     */
     @PostMapping("/create")
     public ResponseEntity<Employee> create(@RequestBody Employee employee) {
         return new ResponseEntity<>(employeeService.store(employee), HttpStatus.CREATED);
